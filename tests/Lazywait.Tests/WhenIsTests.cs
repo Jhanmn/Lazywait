@@ -1,26 +1,40 @@
-﻿using Lazywait.Tests.Stubs;
+using System.Linq.Expressions;
+using Lazywait.Tests.Stubs;
 
 namespace Lazywait.Tests;
 
 [TestFixture]
-public class WhenIsTests
+internal class WhenIsTests : AwaitableContractTests
 {
+    protected override Task Wait<TValue>(
+        TestClass owner,
+        Expression<Func<TestClass, TValue>> selector,
+        TValue expected,
+        TimeSpan? timeout = null,
+        CancellationToken cancellationToken = default)
+        => owner.WhenIs(PropertyNameOf(selector), expected, timeout, cancellationToken);
+
     [Test]
-    [CancelAfter(1000)]
-    public async Task Completes_when_property_reaches_value()
+    public void Throws_ArgumentNullException_when_owner_is_null()
+    {
+        TestClass owner = null!;
+        Assert.Throws<ArgumentNullException>(() =>
+            owner.WhenIs(nameof(TestClass.CurrentPosition), 1));
+    }
+
+    [Test]
+    public void Throws_ArgumentException_for_empty_name()
     {
         var device = new TestClass();
-        var waiter =  device.WhenIs(observableName: nameof(TestClass.CurrentPosition), value: 2);
-
-        _ = Task.Run(async () =>
-        {
-            await Task.Delay(50);
-            device.CurrentPosition = 1;
-            await Task.Delay(50);
-            device.CurrentPosition = 2;
-        });
-
-        await waiter;
+        Assert.Throws<ArgumentException>(() =>
+            device.WhenIs("  ", 1));
     }
-    
+
+    [Test]
+    public void Throws_ArgumentException_for_unknown_property()
+    {
+        var device = new TestClass();
+        Assert.Throws<ArgumentException>(() =>
+            device.WhenIs("DoesNotExist", 1));
+    }
 }
