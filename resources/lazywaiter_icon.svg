@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2e4a6b"/>
+      <stop offset="100%" stop-color="#1a2e45"/>
+    </radialGradient>
+    <radialGradient id="skyGlow" cx="50%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#3a6186" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#1a2e45" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="circleClip">
+      <circle cx="256" cy="256" r="240"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#bgGrad)"/>
+  <circle cx="256" cy="256" r="256" fill="url(#skyGlow)"/>
+
+  <!-- Subtle ground plane -->
+  <ellipse cx="256" cy="390" rx="200" ry="18" fill="#0d1f33" opacity="0.5" clip-path="url(#circleClip)"/>
+
+  <!-- Stars -->
+  <g fill="#c8dff5" opacity="0.6">
+    <circle cx="80" cy="90" r="1.5"/>
+    <circle cx="130" cy="60" r="1"/>
+    <circle cx="170" cy="110" r="1.5"/>
+    <circle cx="340" cy="70" r="1"/>
+    <circle cx="400" cy="95" r="1.5"/>
+    <circle cx="430" cy="55" r="1"/>
+    <circle cx="460" cy="120" r="1.2"/>
+    <circle cx="60" cy="150" r="1"/>
+    <circle cx="100" cy="130" r="1.2"/>
+    <circle cx="450" cy="150" r="1"/>
+  </g>
+
+  <!-- Moon -->
+  <circle cx="400" cy="110" r="28" fill="#f0e6c8" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="412" cy="102" r="22" fill="#2e4a6b"/>
+
+  <!-- Tree silhouette (left) -->
+  <g fill="#12253a" clip-path="url(#circleClip)">
+    <rect x="68" y="280" width="10" height="120"/>
+    <ellipse cx="73" cy="260" rx="32" ry="45"/>
+    <ellipse cx="58" cy="275" rx="22" ry="35"/>
+    <ellipse cx="90" cy="270" rx="22" ry="38"/>
+  </g>
+
+  <!-- Tree silhouette (right) -->
+  <g fill="#12253a" clip-path="url(#circleClip)">
+    <rect x="434" y="290" width="10" height="110"/>
+    <ellipse cx="439" cy="268" rx="30" ry="42"/>
+    <ellipse cx="422" cy="282" rx="20" ry="32"/>
+    <ellipse cx="456" cy="277" rx="22" ry="36"/>
+  </g>
+
+  <!-- === BENCH === -->
+  <!-- Bench legs -->
+  <g fill="#8B6F47" filter="url(#softShadow)">
+    <!-- Left leg -->
+    <rect x="148" y="342" width="10" height="48" rx="3"/>
+    <!-- Right leg -->
+    <rect x="340" y="342" width="10" height="48" rx="3"/>
+    <!-- Feet stretcher -->
+    <rect x="152" y="378" width="202" height="8" rx="3"/>
+  </g>
+  <!-- Bench seat planks -->
+  <rect x="140" y="330" width="222" height="14" rx="4" fill="#a0784d" filter="url(#softShadow)"/>
+  <rect x="140" y="326" width="222" height="8" rx="3" fill="#b8905e"/>
+  <!-- Bench back support -->
+  <rect x="148" y="280" width="10" height="56" rx="3" fill="#8B6F47"/>
+  <rect x="342" y="280" width="10" height="56" rx="3" fill="#8B6F47"/>
+  <!-- Bench back slats -->
+  <rect x="140" y="278" width="222" height="11" rx="4" fill="#a0784d"/>
+  <rect x="140" y="296" width="222" height="11" rx="4" fill="#a0784d"/>
+  <rect x="140" y="314" width="222" height="11" rx="4" fill="#a0784d"/>
+
+  <!-- === OLD MAN === -->
+  <!-- Body / torso -->
+  <g filter="url(#softShadow)">
+    <!-- Coat / body -->
+    <path d="M220 260 Q215 310 218 334 L285 334 Q288 310 280 260 Q260 250 240 250 Z" fill="#4a5568"/>
+    <!-- Collar -->
+    <path d="M240 250 Q248 258 256 252 Q264 258 272 250 Q264 244 256 246 Q248 244 240 250Z" fill="#718096"/>
+    <!-- Scarf / neck area -->
+    <path d="M242 252 Q256 262 270 252 Q264 248 256 250 Q248 248 242 252Z" fill="#c7a24a"/>
+
+    <!-- Left arm along body -->
+    <path d="M220 265 Q210 290 208 318 Q214 320 220 318 Q222 296 228 270Z" fill="#4a5568"/>
+    <!-- Left hand on cane -->
+    <ellipse cx="212" cy="322" rx="9" ry="7" fill="#c8956a"/>
+
+    <!-- Right arm resting on bench back -->
+    <path d="M280 265 Q295 280 298 290 Q292 293 288 291 Q286 282 275 270Z" fill="#4a5568"/>
+    <!-- Right hand -->
+    <ellipse cx="294" cy="293" rx="9" ry="7" fill="#c8956a"/>
+
+    <!-- Legs / trousers -->
+    <path d="M224 334 Q220 360 222 378 L242 378 Q244 360 246 340Z" fill="#2d3748"/>
+    <path d="M270 334 Q272 360 270 378 L290 378 Q292 360 286 340Z" fill="#2d3748"/>
+
+    <!-- Shoes -->
+    <ellipse cx="232" cy="380" rx="16" ry="7" fill="#1a202c"/>
+    <ellipse cx="280" cy="380" rx="16" ry="7" fill="#1a202c"/>
+
+    <!-- Cane -->
+    <line x1="212" y1="325" x2="200" y2="390" stroke="#6b4c2a" stroke-width="5" stroke-linecap="round"/>
+    <path d="M200 385 Q196 378 207 376 Q212 382 200 385Z" fill="#6b4c2a"/>
+
+    <!-- Neck -->
+    <rect x="250" y="235" width="14" height="18" rx="5" fill="#c8956a"/>
+
+    <!-- Head -->
+    <ellipse cx="257" cy="220" rx="30" ry="32" fill="#c8956a"/>
+
+    <!-- White hair on sides -->
+    <path d="M228 215 Q232 200 240 205 Q235 215 228 225Z" fill="#e8e0d0"/>
+    <path d="M286 215 Q282 200 274 205 Q279 215 286 225Z" fill="#e8e0d0"/>
+    <!-- Top wispy hair -->
+    <path d="M240 192 Q248 185 257 188 Q266 185 274 192 Q266 196 257 194 Q248 196 240 192Z" fill="#d4ccc0"/>
+
+    <!-- Face features -->
+    <!-- Eyes (closed/relaxed, elderly) -->
+    <path d="M244 215 Q248 212 252 215" stroke="#5a3e2b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M262 215 Q266 212 270 215" stroke="#5a3e2b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Eyebrows (bushy, white) -->
+    <path d="M243 210 Q248 207 253 209" stroke="#e8e0d0" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M261 209 Q266 207 271 210" stroke="#e8e0d0" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M255 218 Q252 226 256 228 Q260 226 257 218" fill="#b8825a" opacity="0.7"/>
+
+    <!-- Smile / contented expression -->
+    <path d="M249 233 Q257 239 265 233" stroke="#8B5E3C" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Wrinkles -->
+    <path d="M232 220 Q236 223 234 228" stroke="#b8825a" stroke-width="1.2" fill="none" opacity="0.6"/>
+    <path d="M280 220 Q276 223 278 228" stroke="#b8825a" stroke-width="1.2" fill="none" opacity="0.6"/>
+
+    <!-- Ear -->
+    <ellipse cx="228" cy="222" rx="7" ry="9" fill="#c0886a"/>
+    <ellipse cx="286" cy="222" rx="7" ry="9" fill="#c0886a"/>
+
+    <!-- Glasses -->
+    <circle cx="248" cy="216" r="11" fill="none" stroke="#5a3e2b" stroke-width="2.5" opacity="0.85"/>
+    <circle cx="268" cy="216" r="11" fill="none" stroke="#5a3e2b" stroke-width="2.5" opacity="0.85"/>
+    <line x1="259" y1="216" x2="257" y2="216" stroke="#5a3e2b" stroke-width="2"/>
+    <line x1="237" y1="216" x2="228" y2="218" stroke="#5a3e2b" stroke-width="2"/>
+    <line x1="279" y1="216" x2="287" y2="218" stroke="#5a3e2b" stroke-width="2"/>
+
+    <!-- Cap / hat -->
+    <ellipse cx="257" cy="194" rx="34" ry="9" fill="#2d3748"/>
+    <path d="M228 194 Q232 178 257 175 Q282 178 286 194Z" fill="#374151"/>
+    <!-- Cap brim shadow -->
+    <path d="M228 196 Q257 200 286 196" stroke="#1a202c" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- Ground shadow under bench -->
+  <ellipse cx="256" cy="388" rx="120" ry="10" fill="#000" opacity="0.25" clip-path="url(#circleClip)"/>
+
+  <!-- Outer ring border -->
+  <circle cx="256" cy="256" r="248" fill="none" stroke="#4a7fa5" stroke-width="4" opacity="0.5"/>
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#6ba3c8" stroke-width="1.5" opacity="0.3"/>
+</svg>

@@ -7,13 +7,14 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <PackageId>Lazywait</PackageId>
+        <PackageId>Jhanmn.Lazywait</PackageId>
         <Version>1.0.0</Version>
         <Authors>Julius Kertscher</Authors>
         <Description>Lightweight, allocation-conscious extension methods for await-ing changes on INotifyPropertyChanged objects.</Description>
         <PackageTags>inpc;notifypropertychanged;async;await;mvvm</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>lazywaiter_icon.png</PackageIcon>
         <PackageProjectUrl>https://github.com/Jhanmn/Lazywait</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Jhanmn/Lazywait</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
@@ -24,6 +25,7 @@
 
     <ItemGroup>
         <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+        <None Include="..\..\resources\lazywaiter_icon.png" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
 </Project>

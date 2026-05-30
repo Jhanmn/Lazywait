@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="resources/lazywaiter_icon.svg" alt="Lazywait" width="160" />
+</p>
+
 # Lazywait
 
 Lightweight, allocation-conscious extension methods for `await`-ing changes on
