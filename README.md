@@ -4,6 +4,13 @@
 
 # Lazywait
 
+<p align="center">
+  <a href="https://github.com/Jhanmn/Lazywait/actions/workflows/build.yml"><img src="https://github.com/Jhanmn/Lazywait/actions/workflows/build.yml/badge.svg" alt="Build" /></a>
+  <a href="https://www.nuget.org/packages/Lazywait"><img src="https://img.shields.io/nuget/v/Lazywait.svg" alt="NuGet" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Jhanmn/Lazywait.svg" alt="License" /></a>
+  <img src="https://img.shields.io/badge/.NET-netstandard2.0-512BD4.svg" alt="Target" />
+</p>
+
 Lightweight, allocation-conscious extension methods for `await`-ing changes on
 [`INotifyPropertyChanged`](https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged)
 objects. Instead of wiring up `PropertyChanged` handlers by hand, you write a
